@@ -1,7 +1,8 @@
 Rails.application.routes.draw do
   resources :equipments do
-    resources :reservations, only: %i[index show new create destroy]
+    resources :reservations, only: %i[index new create]
   end
+  resources :reservations, only: %i[show destroy]
 
   devise_for :users
   root to: 'pages#home'
