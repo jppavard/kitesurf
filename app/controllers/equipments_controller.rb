@@ -19,7 +19,7 @@ class EquipmentsController < ApplicationController
 
   def edit
     if @equipment.save
-      redirect_to @equipment, notice: 'your kitesurf has been successfully updated.'
+      redirect_to equipment_path(@equipment), notice: 'your kitesurf has been successfully updated.'
     else
       render :new
     end
@@ -29,9 +29,13 @@ class EquipmentsController < ApplicationController
   end
 
   def show
+    @reservation = Reservation.find(params[:id])
   end
 
   def destroy
+    @equipment = Equipment.find(params[:id])
+    @equipment.delete
+    redirect_to equipments_path
   end
 
   private
