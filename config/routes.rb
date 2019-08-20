@@ -1,8 +1,10 @@
 Rails.application.routes.draw do
-  resources :equipments do
-    resources :reservations, only: %i[index new create]
+  resources :equipments, except: %i[new] do
+    resources :reservations, only: %i[new create]
   end
   resources :reservations, only: %i[show destroy]
+
+  get :my_equipments, to: 'equipments#my_index'
 
   devise_for :users
   root to: 'pages#home'

@@ -28,13 +28,15 @@ class EquipmentsController < ApplicationController
   def update
   end
 
+  def my_index
+    @equipments = current_user.owned_equipments
+  end
+
   def show
-    @reservation = Reservation.find(params[:id])
   end
 
   def destroy
-    @equipment = Equipment.find(params[:id])
-    @equipment.delete
+    @equipment.destroy
     redirect_to equipments_path
   end
 

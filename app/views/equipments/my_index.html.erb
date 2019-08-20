@@ -1,0 +1,21 @@
+<h2>my equipments</h2>
+<p>@equipments</p>
+
+<div class="container">
+  <div class="row">
+    <div class="cards">
+    <% @equipments.each do |equipment| %>
+      <div class="card">
+<%= raise%>
+        <%= equipment.title %>
+        <%= equipment.brand %>
+        <%= equipment.model %>
+        <%= equipment.size %>
+        <%= equipment.rating %>
+        <%= equipment.photo %>
+      </div>
+    <% end %>
+    </div>
+  </div>
+</div>
+
