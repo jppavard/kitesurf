@@ -10,4 +10,5 @@ class Equipment < ApplicationRecord
   validates :model, presence: true
   validates :location, presence: true
   validates :price, presence: true
+  validates :title, presence: true
 end
