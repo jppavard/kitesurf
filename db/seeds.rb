@@ -7,20 +7,6 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 require 'faker'
 
-user = User.new
-
-name = Faker::Name.name .split(" ")
-user.first_name = name[0]
-user.last_name = name[1]
-user.address = Faker::Address.full_address
-user.avatar = "584584587"
-user.email = Faker::Internet.email
-
-
-
-p user.save
-
-p user.errors
 
 
 
@@ -56,3 +42,18 @@ p user.errors
 # #   add_foreign_key "reservations", "equipment"
 # #   add_foreign_key "reservations", "users"
 # # end
+
+
+
+10.times do
+  user = User.new
+  name = Faker::Name.name .split(" ")
+  user.first_name = name[0]
+  user.last_name = name[1]
+  user.address = Faker::Address.full_address
+  user.phone_number = Faker::PhoneNumber.phone_number
+  user.owner = false
+  user.remote_avatar_url = "https://picsum.photos/id/635/200/300"
+  user.email = Faker::Internet.email
+  user.password = "000000"
+end
