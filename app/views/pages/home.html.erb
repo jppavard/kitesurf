@@ -13,3 +13,28 @@
 
 <% end %>
 
+
+
+
+
+<div class="container">
+  <div class="cards">
+
+     <% @equipments.each do |equipment| %>
+        <div class="option">
+          <%= link_to new_equipment_reservation_path(:equipment_id) do %>
+            <i class="fas fa-plus"></i>
+            <% end %>
+          <%= link_to reservation_path(:id), method: :delete, data: { confirm: 'Are you sure?' }  do%>
+            <i class="fas fa-trash"></i>
+            <% end %>
+        </div>
+        <div class="infos">
+          <h2 class="brand"><%= equipment.brand %></h2>
+          <h2 class="model"><%= equipment.model %></h2>
+          <h2 class="size"><%= equipment.size %></h2>
+        </div>
+    <% end %>
+  </div>
+
+</div>

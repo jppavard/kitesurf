@@ -1,6 +1,5 @@
 class PagesController < ApplicationController
   def home
-    @equipment = Equipment.new
-    @user = current_user
+    @equipments = Equipment.all
   end
 end
