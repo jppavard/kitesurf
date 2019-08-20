@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  resources :equipments do
+  resources :equipments, except: %i[new] do
     resources :reservations, only: %i[new create]
   end
   resources :reservations, only: %i[show destroy]

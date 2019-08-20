@@ -28,6 +28,10 @@ class EquipmentsController < ApplicationController
   def update
   end
 
+  def my_index
+    @equipments = current_user.owned_equipments
+  end
+
   def show
   end
 
