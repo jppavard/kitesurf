@@ -4,8 +4,8 @@
 <%= form_with(url: equipments_path, method: "get", local: true) do %>
 
 <%= date_field(:reservation, :start_date) %>
-<%= search_field(:equipment, :style) %>
-<%= options_from_collection_for_select(Equipment.all, :id, :style) %>
+
+
 
 <% end %>
 
@@ -15,22 +15,30 @@
 
 <div class="container">
   <div class="cards">
-
      <% @equipments.each do |equipment| %>
+      <div class="card">
         <div class="option">
-          <%= link_to new_equipment_reservation_path(:equipment_id) do %>
+          <%= link_to equipment_path(equipment) do %>
+              <i class="fas fa-eye"></i>
+          <% end %>
+
+          <%= link_to new_equipment_reservation_path(equipment) do %>
             <i class="fas fa-plus"></i>
             <% end %>
-          <%= link_to reservation_path(:id), method: :delete, data: { confirm: 'Are you sure?' }  do%>
+
+          <%= link_to equipment_path(equipment), method: :delete, data: { confirm: 'Are you sure?' }  do%>
             <i class="fas fa-trash"></i>
-            <% end %>
+          <% end %>
         </div>
+
         <div class="infos">
-          <h2 class="brand"><%= equipment.brand %></h2>
-          <h2 class="model"><%= equipment.model %></h2>
-          <h2 class="size"><%= equipment.size %></h2>
+          <h2><%= equipment.title %></h2>
+          <h2 class="brand"> Brand: <%= equipment.brand %> </h2>
+          <h2 class="model"> Model: <%= equipment.model %> </h2>
+          <h2 class="size"> Size: <%= equipment.size %> m2 </h2>
+          <h2 class="size"> Rating: <%= equipment.rating %> m2 </h2>
         </div>
+      </div>
     <% end %>
   </div>
-
 </div>
