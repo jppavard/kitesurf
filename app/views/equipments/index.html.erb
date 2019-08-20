@@ -7,14 +7,15 @@
 
      <% @equipments.each do |equipment| %>
         <div class="option">
-          <%= link_to new_equipment_reservation_path(:equipment_id) do %>
+          <%= link_to new_equipment_reservation_path(equipment) do %>
             <i class="fas fa-plus"></i>
             <% end %>
 
-          <%= link_to equipment_path(equipment.id), method: :delete, data: { confirm: 'Are you sure?' }  do%>
+          <%= link_to equipment_path(equipment), method: :delete, data: { confirm: 'Are you sure?' }  do%>
             <i class="fas fa-trash"></i>
             <% end %>
         </div>
+
         <div class="infos">
           <h2 class="brand">Brand: <%= equipment.brand %></h2>
           <h2 class="model">Model: <%= equipment.model %></h2>
