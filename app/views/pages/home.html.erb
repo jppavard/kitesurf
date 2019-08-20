@@ -1,2 +1,15 @@
+
+
+
+
 <h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+
+
+<%= form_with(url: equipments_path, method: "get", local: true) do %>
+
+<%= date_field(:reservation, :start_date) %>
+<%= search_field(:equipment, :style) %>
+<%= options_from_collection_for_select(Equipment.all, :id, :style) %>
+
+<% end %>
+
