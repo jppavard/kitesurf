@@ -17,6 +17,7 @@ gem 'webpacker'
 gem 'devise'
 gem 'cloudinary', '~> 1.9.1'
 gem 'carrierwave', '~> 1.2'
+gem 'faker'
 gem 'awesome_print'
 
 group :development do
