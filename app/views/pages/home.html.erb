@@ -5,8 +5,9 @@
 
 <%= date_field(:reservation, :start_date) %>
 
+<%= select_tag(:style, options_for_select(Equipment::CATEGORIES)) %>
 
-
+<%= submit_tag("Search") %>
 <% end %>
 
 
