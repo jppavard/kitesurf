@@ -1,2 +1,28 @@
-<h1>Equipment#index</h1>
+<h1>List of equipments</h1>
 <p>Find me in app/views/equipment/index.html.erb</p>
+
+
+<div class="container">
+  <div class="cards">
+
+     <% @equipments.each do |equipment| %>
+      <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= cl_image_path equipment.photo %>)">
+        <div class="option">
+          <%= link_to new_equipment_reservation do %>
+            <i class="fas fa-plus"></i>
+            <% end %>
+          <%= link_to reservation, method: :delete, data: { confirm: 'Are you sure?' }  do%>
+            <i class="fas fa-trash"></i>
+            <% end %>
+        </div>
+        <div class="infos">
+          <h2 class="brand"><%= equipment.brand %></h2>
+          <h2 class="model"><%= equipment.model %></h2>
+          <h2 class="size"><%= equipment.size %></h2>
+          <p><%= p.description %> de <%= dose.ingredient.name %></p>
+        </div>
+      </div>
+    <% end %>
+  </div>
+
+</div>
