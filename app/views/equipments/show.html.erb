@@ -1,18 +1,35 @@
 <h1>Equipment#show</h1>
 <p>Find me in app/views/equipment/show.html.erb</p>
 
-<h2><%= @equipment.title %></h2>
-<p><%= @equipment.description %></p>
-<p><%= @equipment.photo %></p>
-<p><%= @equipment.style %></p>
-<p><%= @equipment.location %></p>
-<p><%= @equipment.rating %></p>
+<div class = 'banner'><%= @equipment.photo %></div>
 
-<p><% user_id = @equipment.user_id %> </p>
-<div class="avatar" style="height: 50px;
-background-image: url('<%=cl_image_path User.find(user_id).avatar %>')">
+<div class = 'equipment_card_presentation'>
+  <h2><%= @equipment.title %></h2>
+  <p><%= @equipment.rating %></p>
+  <h3 class="brand">Brand: <%= @equipment.brand %></h3>
+  <h3 class="model">Model: <%= @equipment.model %></h3>
+  <h3 class="size">Size: <%= @equipment.size %>m2</h3>
+  <p><%= @equipment.description %></p>
+  <p><%= @equipment.photo %></p>
+  <p><%= @equipment.style %></p>
+  <p><%= @equipment.location %></p>
 </div>
+<p><% user_id = @equipment.user_id %> </p>
+<div class="avatar" style="height: 50px; background-image: url('<%=cl_image_path User.find(user_id).avatar %>')">
+</div>
+<form>
+  <div class="form-group">
+    <h4><%= @equipment.price %> € per day</h4>
+    <label>Date of the booking</label>
+    <div class="d-flex flex-row justify-content-between align-items-center">
+    <input type="date">
+    <div class="invalid-feedback">Please provide a valid value.</div>
+    <div class="valid-feedback">Looks good!</div>
+  </div>
+ <button type="submit" class="btn btn-primary"><%= link_to 'I reserve this equipment!', reservation_path , :onclick => "$('#form_id').submit()" %></button>
+</form>
 
-<h2 class="brand">Brand: <%= @equipment.brand %></h2>
-<h2 class="model">Model: <%= @equipment.model %></h2>
-<h2 class="size">Size: <%= @equipment.size %>m2</h2>
+
+
+
+
