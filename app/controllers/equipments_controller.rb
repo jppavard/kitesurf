@@ -29,12 +29,11 @@ class EquipmentsController < ApplicationController
   end
 
   def show
-    @reservation = Reservation.find(params[:id])
+    @equipment = Equipment.find(params[:id])
   end
 
   def destroy
-    @equipment = Equipment.find(params[:id])
-    @equipment.delete
+    @equipment.destroy
     redirect_to equipments_path
   end
 

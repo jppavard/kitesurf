@@ -10,14 +10,14 @@
           <%= link_to new_equipment_reservation_path(:equipment_id) do %>
             <i class="fas fa-plus"></i>
             <% end %>
-          <%= link_to reservation_path(:id), method: :delete, data: { confirm: 'Are you sure?' }  do%>
+          <%= link_to equipment_path(@equipment), method: :delete, data: { confirm: 'Are you sure?' }  do%>
             <i class="fas fa-trash"></i>
             <% end %>
         </div>
         <div class="infos">
-          <h2 class="brand"><%= equipment.brand %></h2>
-          <h2 class="model"><%= equipment.model %></h2>
-          <h2 class="size"><%= equipment.size %></h2>
+          <h2 class="brand">Brand: <%= equipment.brand %></h2>
+          <h2 class="model">Model: <%= equipment.model %></h2>
+          <h2 class="size">Size: <%= equipment.size %>m2</h2>
         </div>
     <% end %>
   </div>
