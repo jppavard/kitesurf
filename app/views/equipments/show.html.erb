@@ -1,6 +1,44 @@
 <h1>Equipment#show</h1>
 <p>Find me in app/views/equipment/show.html.erb</p>
 
+<form>
+  <div class="form-row">
+    <div class="col-md-2 mb-1">
+      <label for="validationDefault03">Brand</label>
+      <select class="custom-select">
+        <option selected>Brand ?</option>
+        <option value="1">F-One</option>
+        <option value="2">Flysurfer</option>
+        <option value="3">Naish</option>
+        <option value="4">Airush</option>
+        <option value="5">Blade</option>
+        <option value="6">Liquid Force</option>
+        <option value="7">Ozone</option>
+      </select>
+    </div>
+    <div class="col-md-2 mb-1">
+      <label for="validationDefault03">Style</label>
+      <select class="custom-select">
+        <option selected>Style ?</option>
+        <option value="wave">Wave</option>
+        <option value="freestyle">Freestyle</option>
+        <option value="freeride">Freeride</option>
+        <option value="foil">Foil</option>
+      </select>
+    </div>
+    <div class="col-md-2 mb-1">
+      <div class="slidecontainer" class="col-md-2 mb-1">
+        <label for="validationDefault03">Size</label>
+        </div> <input type="range" min="3" max="16" value="1" class="slider" id=size>
+      </div>
+    </div>
+    <div class="col-md-2 mb-1">
+      <label for="validationDefault03">Location</label>
+      <input type="text" class="form-control" id="validationDefault03" placeholder="Location" required>
+    </div>
+  <button class="btn btn-primary" type="submit">Submit form</button>
+</form>
+
 <div class = 'banner'><%= @equipment.photo %></div>
 
 <div class = 'equipment_card_presentation'>
