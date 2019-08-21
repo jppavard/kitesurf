@@ -6,7 +6,7 @@
 <%= date_field(:reservation, :start_date) %>
 
 <%= select_tag(:style, options_for_select(Equipment::CATEGORIES)) %>
-
+<%= range_field :size, :min=>0, :max=>200, :class=>"slide", :id=>"slider1"%>
 <%= submit_tag("Search") %>
 <% end %>
 

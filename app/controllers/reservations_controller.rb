@@ -7,12 +7,15 @@ class ReservationsController < ApplicationController
 
   def new
     @reservation = Reservation.new
+    @equipment = Equipment.find(params[:equipment_id])
+    authorize(@reservation)
   end
 
   def create
     @equipment = Equipment.find(params[:equipment_id])
     @reservation = Reservation.new(reservation_params)
     @reservation.equipment = @equipment
+    authorize(@reservation)
     if @reservation.save
       redirect_to equipment_path(@equipment), notice: 'your reservation has been successfully created.'
     else

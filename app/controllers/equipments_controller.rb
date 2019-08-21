@@ -1,5 +1,6 @@
 class EquipmentsController < ApplicationController
   before_action :set_equipment, only: %i[show edit destroy]
+  # skip_before_action :authenticate_user!, only: %i[index show]
   def index
     @equipments = Equipment.all
   end
@@ -45,6 +46,7 @@ class EquipmentsController < ApplicationController
   # Use callbacks to share common setup or constraints between actions.
   def set_equipment
     @equipment = Equipment.find(params[:id])
+    authorize(@equipment)
   end
 
   # Only allow a trusted parameter "white list" through.
