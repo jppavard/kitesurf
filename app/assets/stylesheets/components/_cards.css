@@ -8,11 +8,11 @@
   background-size: cover;
   background-position: center;
   background-color: #004D7F;
-  padding: 5px ;
+  padding: 3px ;
   color: black;
   font-weight: bolder;
   display: flex;
-  box-shadow: 0px 1px 15px 1px black;
+  box-shadow: 0px 1px 4px 1px black;
 }
 
 .card-style {
@@ -33,7 +33,7 @@
 .card-product {
   overflow: hidden;
   background: white;
-  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  box-shadow: 0 0 10px rgba(0,0,0,0.2);
 }
 
 .card-product > img {
