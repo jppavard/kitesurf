@@ -2,7 +2,6 @@
   before_action :set_reservation, only: %i[show destroy]
 
   def clients_reservations
-    p current_user.owned_reservations
     @reservations = current_user.owned_reservations
     authorize(@reservations)
   end
