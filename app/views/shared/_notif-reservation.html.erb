@@ -1,0 +1,67 @@
+
+
+<!-- <div class="notification">
+  <img src='https://avatars0.githubusercontent.com/u/51470401?v=4' class="avatar-large" />
+  <div class="notification-content">
+    <h3><small>21/08/2019</small></h3>
+    <h3><strong>Location</strong> Marseille</h3>
+    <h3><strong>Price</strong> 100€</h3>
+  </div>
+
+  <div class="notification-content">
+    <p><strong>Model</strong> 100€</p>
+    <p><strong>Brand</strong> 100€</p>
+    <p><strong>Size</strong> 100€</p>
+    <p><strong>Style</strong> 100€</p>
+
+  </div>
+
+  <div class="notification-actions">
+    <a href="#">Edit <i class="fas fa-pencil-alt"></i></a>
+    <a href="#">Delete <i class="far fa-trash-alt"></i></a>
+  </div>
+</div> -->
+
+
+
+<% current_user.owned_reservations.each do |reservation| %>
+<div class="notification">
+  <div class="row align-items-start">
+    <div class="col-12 col-md-8">
+      <%= cl_image_tag(reservation.user.avatar, class: "avatar-large", width: 56, height: 56) %>
+      <div class="notification-content">
+        <h3><small><%= reservation.start_date %></small></h3>
+        <h3><strong>Location </strong><%= reservation.equipment.location %></h3>
+        <h3><strong>Price </strong><%= reservation.equipment.price %> €</h3>
+      </div>
+    </div>
+    <div class="col-12 col-md-4 p-3">
+      <div class="notification-description">
+        <p><strong>Brand </strong><%= reservation.equipment.brand.upcase %></p>
+        <p><strong>Model </strong><%= reservation.equipment.model %></p>
+        <p><strong>Size </strong><%= reservation.equipment.size %> m²</p>
+        <p><strong>Style </strong><%= reservation.equipment.style.upcase %></p>
+      </div>
+    </div>
+    <div class="col-12 col-md-4">
+      <div class="notification-actions">
+
+        <a href="#">Delete <i class="far fa-trash-alt"></i></a>
+      </div>
+    </div>
+  </div>
+</div>
+<% end %>
+
+
+
+
+
+
+
+
+
+
+
+
+
