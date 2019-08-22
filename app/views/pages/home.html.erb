@@ -1,6 +1,29 @@
 <%= render 'shared/banner' %>
 
 <div class="container">
+
+<h2>Different styles for your own style</h2>
+
+  <div class='cards'>
+    <div class="card-style" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= asset_path('style/wave.jpg') %>)">
+      Wave
+    </div>
+
+    <div class="card-style" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= asset_path('style/freestyle.jpg') %>)">
+      Freestyle
+    </div>
+
+    <div class="card-style" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= asset_path('style/freeride.jpg') %>)">
+      Freeride
+    </div>
+
+    <div class="card-style" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= asset_path('style/foil.jpg') %>)">
+      Foil
+    </div>
+  </div>
+<br>
+<h2>All the available equipments</h2>
+<br>
   <div class="cards">
     <% @equipments.each do |equipment| %>
       <div class="card">
@@ -26,25 +49,7 @@
       </div>
     <% end %>
   </div>
-
-<h2>Different styles for your own style</h2>
-
-  <div class='cards'>
-    <div class="card-style" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= asset_path('style/wave.jpg') %>)">
-      Wave
-    </div>
-
-    <div class="card-style" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= asset_path('style/freestyle.jpg') %>)">
-      Freestyle
-    </div>
-
-    <div class="card-style" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= asset_path('style/freeride.jpg') %>)">
-      Freeride
-    </div>
-
-    <div class="card-style" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= asset_path('style/foil.jpg') %>)">
-      Foil
-    </div>
+<br>
 </div>
-</div>
+
 
