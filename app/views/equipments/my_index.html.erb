@@ -1,18 +1,22 @@
 <h2>my equipments</h2>
-<p>@equipments</p>
 
 <div class="container">
   <div class="row">
     <div class="cards">
     <% @equipments.each do |equipment| %>
-      <div class="card">
-<%= raise%>
-        <%= equipment.title %>
-        <%= equipment.brand %>
-        <%= equipment.model %>
-        <%= equipment.size %>
-        <%= equipment.rating %>
-        <%= equipment.photo %>
+      <div class="card" style=" background-position: center;
+background-image: url('<%=cl_image_path equipment.photo %>')">
+        <p><%= equipment.title %></p>
+        <p>brand <br>
+          <%= equipment.brand %></p>
+        <p>model <br>
+          <%= equipment.model %></p>
+        <p>size <br>
+          <%= equipment.size %> m2</p>
+        <p>rating <br>
+          <%= equipment.rating %></p>
+        <div class="equipment" >
+        </div>
       </div>
     <% end %>
     </div>

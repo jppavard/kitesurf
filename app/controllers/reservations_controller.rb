@@ -5,6 +5,10 @@
     @reservations = Reservation.all
   end
 
+  def my_index
+    @reservations = current_user.reservations
+  end
+
   def new
     @reservation = Reservation.new
   end
@@ -14,7 +18,7 @@
     @reservation = Reservation.new(reservation_params)
     @reservation.equipment = @equipment
     if @reservation.save
-      redirect_to equipment_path(@equipment), notice: 'your reservation has been successfully created.'
+      redirect_to my_reservations_path, notice: 'your reservation has been successfully created.'
     else
       render :new
     end
