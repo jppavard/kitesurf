@@ -6,6 +6,7 @@ Rails.application.routes.draw do
 
   get :my_equipments, to: 'equipments#my_index'
   get :my_reservations, to: 'reservations#my_index'
+  get :clients_reservations, to: 'reservations#clients_reservations'
 
   devise_for :users
   root to: 'pages#home'
