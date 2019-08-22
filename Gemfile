@@ -21,6 +21,7 @@ gem 'faker'
 gem 'awesome_print'
 gem 'pundit'
 gem 'geocoder'
+gem 'pg_search'
 
 group :development do
   gem 'web-console', '>= 3.3.0'
