@@ -1,4 +1,4 @@
-class ReservationsController < ApplicationController
+  class ReservationsController < ApplicationController
   before_action :set_reservation, only: %i[show destroy]
 
   def index

@@ -1,0 +1,78 @@
+
+// ---------------------------
+.notification {
+  // display: flex;
+  // align-items: center;
+  // margin-bottom: 8px;
+  // justify-content: space-between;
+  background: white;
+  height:180px;
+  max-width:100%;
+  padding: 20px 30px;
+  border: 1px solid rgb(235,235,235);
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  // margin: 10px ;
+
+}
+
+.notification:hover {
+  background-color: #f4f4f4;
+}
+
+
+.notification .notification-content {
+  flex-direction: row;
+  justify-content: center;
+  align-items: start;
+  margin-bottom: 60px;
+  padding: 10px 100px;
+  position: absolute;
+
+
+}
+
+.notification .notification-description {
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-end;
+  padding: 0 100px;
+  position: relative;
+}
+
+
+.notification h3 {
+  font-size: 18px;
+}
+
+.notification p {
+  margin: 0;
+  line-height: 1.4;
+}
+
+.notification small {
+  color: #004D7F;
+  font-weight: bold;
+}
+.notification .notification-actions {
+  opacity: 0;
+  display: flex;
+  transition: ease .3s;
+}
+
+.notification:hover .notification-actions {
+  opacity: 1;
+}
+
+.notification .notification-actions a {
+  color: #999999;
+  margin-left: 16px;
+  font-size: 14px;
+}
+
+.notification .notification-actions a:hover {
+  color: #555555;
+}
+
+
+
+
