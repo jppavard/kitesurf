@@ -1,8 +1,4 @@
-<%= form_with(url: equipments_path, method: "get", local: true) do %>
-
-<%= date_field(:reservation, :start_date) %>
-
+<%= form_tag root_path, method: :get do %>
 <%= select_tag(:style, options_for_select(Equipment::CATEGORIES)) %>
-<%= range_field :size, :min=>0, :max=>200, :class=>"slide", :id=>"slider1"%>
-<%= submit_tag("Search") %>
+  <%= submit_tag "Search", class: "btn btn-primary" %>
 <% end %>
