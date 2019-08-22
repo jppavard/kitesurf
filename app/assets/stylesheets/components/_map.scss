@@ -1,5 +1,7 @@
-.mapboxgl-popup {
-  max-width: 200px;
+#map {
+  height: 550px;
+  position: sticky;
+  top: 0;
 }
 
 .mapboxgl-popup-content {
