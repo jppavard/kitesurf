@@ -1,4 +1,4 @@
-class ReservationsController < ApplicationController
+  class ReservationsController < ApplicationController
   before_action :set_reservation, only: %i[show destroy]
 
   def index
@@ -11,12 +11,15 @@ class ReservationsController < ApplicationController
 
   def new
     @reservation = Reservation.new
+    @equipment = Equipment.find(params[:equipment_id])
+    authorize(@reservation)
   end
 
   def create
     @equipment = Equipment.find(params[:equipment_id])
     @reservation = Reservation.new(reservation_params)
     @reservation.equipment = @equipment
+    authorize(@reservation)
     if @reservation.save
       redirect_to my_reservations_path, notice: 'your reservation has been successfully created.'
     else

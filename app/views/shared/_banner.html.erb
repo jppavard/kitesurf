@@ -1,0 +1,53 @@
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(<%= asset_path('banner/banner_kitesurf.jpg')%>);">
+  <div class="container ">
+
+    <div class="col-12 col-md-4">
+      <form action="#" class="border p-3">
+      <h1 class= "p-3">Réservez votre équipement <strong>de Kitesurf</strong>!</h1>
+      <div class="form-group">
+        <label for="message">Où</label>
+        <input class="form-control" type="text" placeholder="your message here" id="message">
+      </div>
+
+      <div class="form-group">
+        <label for="checkin">Date</label>
+        <input class="form-control" type="date" placeholder="dd/mm/yyyy" id="checkin">
+      </div>
+
+      <div class="form-group">
+        <label for="Checkout">Style</label>
+        <input class="form-control" type="date" placeholder="your message here" id="Checkout">
+
+      </div>
+
+      <div class="form-check form-check-inline">
+        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
+        <label class="form-check-label" for="inlineRadio1">Wave</label>
+      </div>
+      <div class="form-check form-check-inline">
+        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
+        <label class="form-check-label" for="inlineRadio2">Freeride</label>
+      </div>
+      <div class="form-check form-check-inline">
+        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio3" value="option3" disabled>
+        <label class="form-check-label" for="inlineRadio3">Freestyle</label>
+      </div>
+
+      <div class="form-group p-3">
+        <label for="Checkout">Size</label>
+
+        <%= range_field_tag(:sliderRangeRails) %>
+      </div>
+
+      <input type="submit" value="Search" class="btn btn-primary w-100">
+
+      </form>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
