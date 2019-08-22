@@ -9,30 +9,16 @@
 
     <%= f.input :location%>
     <%= f.input :size %>
+    <%= f.input :brand %>
     <%= f.input :title%>
+    <%= f.input :description%>
     <%= f.input :price %>
     <%= f.input :photo%>
     <%= f.input :active%>
 
-  </div>
-
   <div class="form-actions">
-    <%= f.button :submit, "Sign up" %>
+    <%= f.button :submit, "Let's go !!" %>
   </div>
+  </div>
+
 <% end %>
-
-
-
-
- t.string "brand"
-
-
-
-
-
-    t.boolean "active"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.string "title"
-    t.text "description"
-    t.index ["user_id"], name: "index_equipment_on_user_id"

@@ -1,2 +1,29 @@
 <h1>Reservations</h1>
 <p>Find me in app/views/reservations/index.html.erb</p>
+
+<h2>my equipments</h2>
+
+<div class="container">
+  <div class="row">
+    <div class="cards">
+    <% @reservations.each do |reservation| %>
+      <div class="card" style=" background-position: center;
+background-image: url('<%=cl_image_path reservation.equipment.photo %>')">
+        <p><%= reservation.equipment.title %></p>
+        <p>brand <br>
+          <%= reservation.equipment.brand %></p>
+        <p>model <br>
+          <%= reservation.equipment.model %></p>
+        <p>size <br>
+          <%= reservation.equipment.size %> m2</p>
+        <p>rating <br>
+          <%= reservation.equipment.rating %></p>
+          <p><%= reservation.paid %></p>
+          <p><%= reservation.start_date %></p>
+        <div class="reservation" >
+        </div>
+      </div>
+    <% end %>
+    </div>
+  </div>
+</div>

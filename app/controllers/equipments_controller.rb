@@ -6,7 +6,7 @@ class EquipmentsController < ApplicationController
     if params[:style]
       @equipments = policy_scope(Equipment.where(style: params[:style])).geocoded #returns equipments with coordinates
     else
-      @equipments = policy_scope(Equipment).geocoded 
+      @equipments = policy_scope(Equipment).geocoded
     end
     @markers = @equipments.map do |equipment|
       {
@@ -26,6 +26,9 @@ class EquipmentsController < ApplicationController
 
   def create
     @equipment = Equipment.new(equipment_params)
+    @equipment.owner = current_user
+    @equipment.rating = 0
+    authorize(@equipment)
     if @equipment.save
       redirect_to @equipment, notice: 'your kitesurf has been successfully created.'
     else
@@ -67,6 +70,6 @@ class EquipmentsController < ApplicationController
 
   # Only allow a trusted parameter "white list" through.
   def equipment_params
-    params.require(:equipment).permit(:brand, :model, :size, :style, :rating, :price, :active, :location, :photo)
+    params.require(:equipment).permit(:brand, :model, :title, :size, :style, :rating, :price, :active, :location, :photo, :description)
   end
 end
