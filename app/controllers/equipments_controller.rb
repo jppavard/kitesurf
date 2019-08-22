@@ -3,10 +3,12 @@ class EquipmentsController < ApplicationController
   before_action :set_equipment, only: %i[show edit destroy]
 
   def index
+    p params[:style]
+    p 'toto'
     if params[:style]
-      @equipments = policy_scope(Equipment.where(style: params[:style])).geocoded #returns equipments with coordinates
+      @equipments = policy_scope(Equipment.all).geocoded #returns equipments with coordinates
     else
-      @equipments = policy_scope(Equipment).geocoded
+      @equipments = policy_scope(Equipment.all).geocoded
     end
     @markers = @equipments.map do |equipment|
       {
