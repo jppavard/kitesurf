@@ -1,12 +1,18 @@
 class EquipmentsController < ApplicationController
+  skip_before_action :authenticate_user!, only: %i[show index]
   before_action :set_equipment, only: %i[show edit destroy]
-  # skip_before_action :authenticate_user!, only: %i[index show]
+
   def index
-    @equipments = Equipment.all
+    if params[:style]
+      @equipments = policy_scope(Equipment.where(style: params[:style]))
+    else
+      @equipments = policy_scope(Equipment)
+    end
   end
 
   def new
     @equipment = Equipment.new
+    authorize(@equipment)
   end
 
   def create
@@ -31,6 +37,7 @@ class EquipmentsController < ApplicationController
 
   def my_index
     @equipments = current_user.owned_equipments
+    authorize(@equipments)
   end
 
   def show

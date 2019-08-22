@@ -16,7 +16,7 @@ class EquipmentPolicy < ApplicationPolicy
   end
 
   def my_index?
-    owner?
+    true
   end
 
   def update?

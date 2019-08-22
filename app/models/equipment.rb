@@ -13,4 +13,12 @@ class Equipment < ApplicationRecord
   validates :location, presence: true
   validates :price, presence: true
   validates :title, presence: true
+
+  def self.search(search)
+    if search
+      p self.find_by(style: search)
+    else
+      self.all
+    end
+  end
 end
