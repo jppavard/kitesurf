@@ -2,7 +2,6 @@
 <p>Find me in app/views/equipment/index.html.erb</p>
 <%= render 'shared/search_bar' %>
 
-
 <div class="container">
   <div class="cards">
 
@@ -16,11 +15,10 @@
             <i class="fas fa-plus"></i>
             <% end %>
 
-          <%= link_to equipment_path(equipment), method: :delete, data: { confirm: 'Are you sure?' }  do%>
+         <!--  <%= link_to equipment_path(equipment), method: :delete, data: { confirm: 'Are you sure?' }  do%>
             <i class="fas fa-trash"></i>
-          <% end %>
+          <% end %> -->
         </div>
-
         <div class="infos">
           <h2><%= equipment.title %></h2>
           <h2 class="brand"> Brand: <%= equipment.brand %> </h2>
@@ -30,5 +28,10 @@
         </div>
     <% end %>
   </div>
+
+  <div id="map";
+    data-markers="<%= @markers.to_json %>"
+    data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"
+  ></div>
 
 </div>

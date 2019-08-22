@@ -14,11 +14,6 @@ class Equipment < ApplicationRecord
   validates :price, presence: true
   validates :title, presence: true
 
-  def self.search(search)
-    if search
-      p self.find_by(style: search)
-    else
-      self.all
-    end
-  end
+  geocoded_by :location
+  after_validation :geocode, if: :will_save_change_to_location?
 end

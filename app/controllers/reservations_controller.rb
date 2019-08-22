@@ -1,8 +1,12 @@
-class ReservationsController < ApplicationController
+  class ReservationsController < ApplicationController
   before_action :set_reservation, only: %i[show destroy]
 
   def index
     @reservations = Reservation.all
+  end
+
+  def my_index
+    @reservations = current_user.reservations
   end
 
   def new
@@ -17,7 +21,7 @@ class ReservationsController < ApplicationController
     @reservation.equipment = @equipment
     authorize(@reservation)
     if @reservation.save
-      redirect_to equipment_path(@equipment), notice: 'your reservation has been successfully created.'
+      redirect_to my_reservations_path, notice: 'your reservation has been successfully created.'
     else
       render :new
     end

@@ -20,6 +20,7 @@ gem 'carrierwave', '~> 1.2'
 gem 'faker'
 gem 'awesome_print'
 gem 'pundit'
+gem 'geocoder'
 
 group :development do
   gem 'web-console', '>= 3.3.0'

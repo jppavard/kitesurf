@@ -4,10 +4,19 @@ class EquipmentsController < ApplicationController
 
   def index
     if params[:style]
-      @equipments = policy_scope(Equipment.where(style: params[:style]))
+      @equipments = policy_scope(Equipment.where(style: params[:style])).geocoded #returns equipments with coordinates
     else
-      @equipments = policy_scope(Equipment)
+      @equipments = policy_scope(Equipment).geocoded 
     end
+    @markers = @equipments.map do |equipment|
+      {
+        lat: equipment.latitude,
+        lng: equipment.longitude,
+        infoWindow: render_to_string(partial: "info_window", locals: { equipment: equipment }),
+        image_url: helpers.asset_url('kitesurf_north.jpg')
+      }
+     end
+    # @equipments = Equipment.all
   end
 
   def new
@@ -45,7 +54,7 @@ class EquipmentsController < ApplicationController
 
   def destroy
     @equipment.destroy
-    redirect_to equipments_path
+    redirect_to my_equipment_path
   end
 
   private

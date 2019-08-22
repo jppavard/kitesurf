@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   resources :reservations, only: %i[show destroy]
 
   get :my_equipments, to: 'equipments#my_index'
+  get :my_reservations, to: 'reservations#my_index'
 
   devise_for :users
   root to: 'pages#home'
