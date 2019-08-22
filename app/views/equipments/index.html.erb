@@ -1,6 +1,5 @@
-
 <%= render 'shared/search_bar'%>
-
+                                  
 <div class='bar-form-search'>
   <form>
     <div class="form-row">
@@ -17,7 +16,7 @@
         <option value="7">Ozone</option>
       </select>
       </div>
-      <div class="col-md-2 mb-1">
+      <div class="col-md-1 mb-1">
         <label for="validationDefault03">Style</label>
         <select class="custom-select">
           <option selected>Style ?</option>
@@ -28,37 +27,94 @@
         </select>
       </div>
       <div class="col-md-2 mb-1">
-        <div class="slidecontainer" class="col-md-2 mb-1">
           <div><label for="validationDefault03">Size</label></div>
-          <input id="ex1" data-slider-id='ex1Slider' type="text" data-slider-min="3" data-slider-max="16" data-slider-step="1" data-slider-value="10"/>
-        </div>
-      </div>
-      <div class="col-md-2 mb-1">
-        <div class="slidecontainer" class="col-md-2 mb-1">
-          <div><label for="validationDefault03">Date</label></div>
-          <input type="date">
-        </div>
+          <input type="range" list="tickmarks">
+            <datalist id="tickmarks">
+              <option value="3" label="3">
+              <option value="4">
+              <option value="5">
+              <option value="6">
+              <option value="7">
+              <option value="8" label="8">
+              <option value="9">
+              <option value="10">
+              <option value="11">
+              <option value="12" label="12">
+              <option value="13">
+              <option value="14">
+              <option value="15">
+              <option value="16" label="12">
+            </datalist>
       </div>
       <div class="col-md-2 mb-1">
         <label for="validationDefault03">Location</label>
         <input type="text" class="form-control" id="validationDefault03" placeholder="Location" required>
       </div>
-      <div class="col-md-2 mb-1">
-        <div class="slidecontainer" class="col-md-2 mb-1">
-          <label for="validationDefault03">Price</label>
-        <input id="ex1" data-slider-id='ex1Slider' type="text" data-slider-min="40" data-slider-max="100" data-slider-step="5" data-slider-value="70"/>
+     <div class="col-md-2 mb-1">
+          <div><label for="validationDefault03">Price</label></div>
+          <input type="range" list="tickmarks">
+            <datalist id="tickmarks">
+              <option value="40" label="40€">
+              <option value="50">
+              <option value="60">
+              <option value="70">
+              <option value="80" label="80€">
+              <option value="90">
+              <option value="100">
+              <option value="110">
+              <option value="120" label="120€">
+            </datalist>
       </div>
-      <div class="col-md-4 mb-2">
+       <div class="col-md-2 mb-1">
+          <div><label for="validationDefault03">Date</label></div>
+          <input type="date">
+      </div>
+      <div class="col-md-1 mb-1">
         <button class="btn btn-primary" type="submit" align-items-center='center'>Search Kitesurf</button>
       </div>
     </div>
   </form>
 </div>
+<br>
+<h1>List of available equipments</h1>
 
-
-<%= form_with(url: equipments_path, method: "get", local: true) %>
-
-<div id="map";
-    data-markers="<%= @markers.to_json %>"
-    data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
+<div class="row">
+    <div class="col-12 col-sm-6">
+      <div class="cards-equipment">
+      <% @equipments.each do |equipment| %>
+      <%= link_to equipment_path(equipment) do %>
+      <div class="card-equipment">
+          <%= cl_image_tag(equipment.photo, crop: :fill) %>
+          <div class="card-equipment-infos">
+              <div class="title">
+              <h2><%= equipment.title %></h2>
+              </div>
+              <div class="brand">
+              <p><%= equipment.brand %> <%= equipment.model %></p>
+              </div>
+              <div class="size">
+              <p>Size: <%= equipment.size %> m2 </p>
+              </div>
+              <div class="description">
+              <p><%= equipment.description %></p>
+              </div>
+              <div class="location">
+              <i class="fas fa-map-marker-alt" ></i>  <%=  equipment.location %>
+              </div>
+              <div class="card-equipment-pricing">
+              <h2 ><%= equipment.price %> €</h2>
+              </div>
+          </div>
+          </div>
+          <% end %>
+        <% end %>
+      </div>
+    </div>
+    <div class="col-12 col-sm-6">
+        <div id="map" class="bg-white border sticky-top"
+        data-markers="<%= @markers.to_json %>"
+        data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
+      </div>
+    </div>
 </div>
+
