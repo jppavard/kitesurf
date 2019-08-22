@@ -10,7 +10,7 @@ puts 'Creating Users seed...'
   name = Faker::Name.name .split(" ")
   user.first_name = name[0]
   user.last_name = name[1]
-  user.address = Faker::Address.full_address
+  user.address = Faker::Address.city
   user.phone_number = Faker::PhoneNumber.phone_number
   user.owner = false
   user.remote_avatar_url = "https://picsum.photos/id/635/200/300"
@@ -36,7 +36,7 @@ description = ["Une board tendre, parfait pour les débutants. Une aile pas trop
   equipment.brand   = brand.sample
   equipment.model   = model.sample
   equipment.style   = style.sample
-  equipment.location = Faker::Address.full_address
+  equipment.location = Faker::Address.city
   equipment.price   = (45..100).to_a.sample
   equipment.remote_photo_url = "https://res.cloudinary.com/dcjawxszi/image/upload/v1566319982/kitesurf_zet4x5.jpg"
   equipment.size = (2..16).to_a.sample
