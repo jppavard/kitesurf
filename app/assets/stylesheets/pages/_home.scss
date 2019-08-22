@@ -1,5 +1,17 @@
 // Specific CSS for your home-page
 .banner {
   background-position: center;
-  background-size: cover;
+  background-size: center;
+}
+
+.search-bar {
+  background:linear-gradient(rgba(255,255,255,0.3),rgba(255,255,255,0.3));
+  h1 {
+    font-size:32px;
+  }
+}
+
+
+.form-check-input {
+  font-size: 10px;
 }
