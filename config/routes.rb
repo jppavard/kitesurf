@@ -8,6 +8,9 @@ Rails.application.routes.draw do
   get :my_reservations, to: 'reservations#my_index'
   get :clients_reservations, to: 'reservations#clients_reservations'
 
+  get :merci, to: 'pages#thankyou'
+  get :merci, to: 'pages#about'
+
   devise_for :users
   root to: 'pages#home'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
