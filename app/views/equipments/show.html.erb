@@ -1,7 +1,21 @@
-<h1>Equipment#show</h1>
-<p>Find me in app/views/equipment/show.html.erb</p>
+<div class = 'banner class="w-100 rounded"'><%= @equipment.photo %></div>
+
+<div class="bg-dark">
+  <div class="container p-3">
+    <div class="row">
+      <div class="col-8">
+        <h2><%= @equipment.title %></h2>
+        <p>Find me in app/views/equipment/show.html.erb</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
 
 <div class = 'banner'><%= @equipment.photo %></div>
+
 
 <div class = 'equipment_card_presentation'>
   <h2><%= @equipment.title %></h2>
