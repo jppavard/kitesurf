@@ -58,11 +58,10 @@
   justify-content: space-between;
   position: relative;
   flex-direction: column;
-<<<<<<< HEAD
-=======
+
   flex-flow: column wrap;
   align-content: stretch;
->>>>>>> 4909eb0d08b31d954da94ef17c52990618ce1176
+
 }
 
 .card-product-pricing {
