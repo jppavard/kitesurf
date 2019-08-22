@@ -1,10 +1,4 @@
-<h1>Pages#home</h1>
-
-<%= form_tag root_path, method: :get do %>
-<%= select_tag(:style, options_for_select(Equipment::CATEGORIES)) %>
-  <%= submit_tag "Search", class: "btn btn-primary" %>
-<% end %>
-
+<%= render 'shared/banner' %>
 
 <div class="container">
 
@@ -33,24 +27,25 @@
   <div class="cards">
     <% @equipments.each do |equipment| %>
       <div class="card">
-
-        <div class="card-product">
+        <%= link_to equipment_path(equipment.id) do%>
+          <div class="card-product">
           <%= cl_image_tag(equipment.photo, crop: :fill) %>
-          <div class="card-product-infos">
+            <div class="card-product-infos">
               <div class="title">
-              <h2><%= equipment.title %></h2>
+               <h2><%= equipment.title %></h2>
               </div>
               <div class="brand">
-              <p><%= equipment.brand %> <%= equipment.model %></p>
+               <p><%= equipment.brand %> <%= equipment.model %></p>
               </div>
               <div class="size">
-              <p>Size: <%= equipment.size %> m2 </p>
+                <p>Size: <%= equipment.size %> m2 </p>
               </div>
               <div class="card-product-pricing">
-              <h2 ><%= equipment.price %> €</h2>
+                <h2 ><%= equipment.price %> €</h2>
               </div>
+            </div>
           </div>
-        </div>
+        <% end %>
       </div>
     <% end %>
   </div>

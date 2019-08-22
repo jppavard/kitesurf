@@ -1,12 +1,14 @@
   class ReservationsController < ApplicationController
   before_action :set_reservation, only: %i[show destroy]
 
-  def index
-    @reservations = Reservation.all
+  def clients_reservations
+    @reservations = current_user.owned_reservations
+    authorize(@reservations)
   end
 
   def my_index
-    @reservations = current_user.reservations
+    @reservations = current_user.owned_equipments
+    authorize(@reservations)
   end
 
   def new
