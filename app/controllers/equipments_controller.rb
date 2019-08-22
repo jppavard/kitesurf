@@ -1,8 +1,13 @@
 class EquipmentsController < ApplicationController
+  skip_before_action :authenticate_user!, only: %i[show index]
   before_action :set_equipment, only: %i[show edit destroy]
-  def index
-    @equipments = Equipment.geocoded #returns equipments with coordinates
 
+  def index
+    if params[:style]
+      @equipments = policy_scope(Equipment.where(style: params[:style])).geocoded #returns equipments with coordinates
+    else
+      @equipments = policy_scope(Equipment).geocoded 
+    end
     @markers = @equipments.map do |equipment|
       {
         lat: equipment.latitude,
@@ -10,12 +15,13 @@ class EquipmentsController < ApplicationController
         infoWindow: render_to_string(partial: "info_window", locals: { equipment: equipment }),
         image_url: helpers.asset_url('kitesurf_north.jpg')
       }
-    end
+     end
     # @equipments = Equipment.all
   end
 
   def new
     @equipment = Equipment.new
+    authorize(@equipment)
   end
 
   def create
@@ -40,6 +46,7 @@ class EquipmentsController < ApplicationController
 
   def my_index
     @equipments = current_user.owned_equipments
+    authorize(@equipments)
   end
 
   def show
@@ -55,6 +62,7 @@ class EquipmentsController < ApplicationController
   # Use callbacks to share common setup or constraints between actions.
   def set_equipment
     @equipment = Equipment.find(params[:id])
+    authorize(@equipment)
   end
 
   # Only allow a trusted parameter "white list" through.
