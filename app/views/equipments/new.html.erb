@@ -1,24 +1,30 @@
 <h2>New</h2>
+<div class="bg-white">
+  <div class="container p-3 d- flex align-items-center">
+    <div class="row">
+      <div class="col-8">
+      <%= simple_form_for(@equipment, url: equipments_path()) do |f| %>
+        <%= f.error_notification %>
 
-<%= simple_form_for(@equipment, url: equipments_path()) do |f| %>
-  <%= f.error_notification %>
+        <div class="form-inputs">
+          <%= f.input :model, autofocus: true%>
+          <%= f.input :style, collection: Equipment::CATEGORIES, selected: :first%>
 
-  <div class="form-inputs">
-    <%= f.input :model, autofocus: true%>
-    <%= f.input :style, collection: Equipment::CATEGORIES, selected: :first%>
+          <%= f.input :location%>
+          <%= f.input :size %>
+          <%= f.input :brand %>
+          <%= f.input :title%>
+          <%= f.input :description%>
+          <%= f.input :price %>
+          <%= f.input :photo%>
+          <%= f.input :active%>
 
-    <%= f.input :location%>
-    <%= f.input :size %>
-    <%= f.input :brand %>
-    <%= f.input :title%>
-    <%= f.input :description%>
-    <%= f.input :price %>
-    <%= f.input :photo%>
-    <%= f.input :active%>
+        <div class="form-actions">
+          <%= f.button :submit, "Let's go !!" %>
+        </div>
+        </div>
 
-  <div class="form-actions">
-    <%= f.button :submit, "Let's go !!" %>
+      <% end %>
+    </div>
   </div>
-  </div>
-
-<% end %>
+</div>
