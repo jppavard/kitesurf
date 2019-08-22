@@ -9,7 +9,7 @@ Rails.application.routes.draw do
   get :clients_reservations, to: 'reservations#clients_reservations'
 
   get :merci, to: 'pages#thankyou'
-  get :merci, to: 'pages#about'
+  get :about, to: 'pages#about'
 
   devise_for :users
   root to: 'pages#home'
