@@ -1,6 +1,7 @@
 <h1>Equipment#show</h1>
 <p>Find me in app/views/equipment/show.html.erb</p>
 
+<div class='bar-form-search'>
 <form>
   <div class="form-row">
     <div class="col-md-2 mb-1">
@@ -28,16 +29,31 @@
     </div>
     <div class="col-md-2 mb-1">
       <div class="slidecontainer" class="col-md-2 mb-1">
-        <label for="validationDefault03">Size</label>
-        </div> <input type="range" min="3" max="16" value="1" class="slider" id=size>
+        <div><label for="validationDefault03">Size</label></div>
+        <input type="range" min="3" max="16" value="10" class="slider" id=size_slide>
+      </div>
+    </div>
+    <div class="col-md-2 mb-1">
+      <div class="slidecontainer" class="col-md-2 mb-1">
+        <div><label for="validationDefault03">Date</label></div>
+        <input type="date">
       </div>
     </div>
     <div class="col-md-2 mb-1">
       <label for="validationDefault03">Location</label>
       <input type="text" class="form-control" id="validationDefault03" placeholder="Location" required>
     </div>
-  <button class="btn btn-primary" type="submit">Submit form</button>
+    <div class="col-md-2 mb-1">
+      <div class="slidecontainer" class="col-md-2 mb-1">
+        <label for="validationDefault03">Price</label>
+        </div> <b>30 €</b> <input id="price_slide" type="range" class="span2" value="" data-slider-min="30" data-slider-max="100" data-slider-step="5" data-slider-value="[45,80]"/> <b>€100 €</b>
+      </div>
+    </div>
+    <div class="col-md-2 mb-1">
+      <button class="btn btn-primary" type="submit" align-items-center='center'>Search Kitesurf</button>
+    </div>
 </form>
+</div>
 
 <div class = 'banner'><%= @equipment.photo %></div>
 
