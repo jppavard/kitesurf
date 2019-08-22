@@ -51,7 +51,7 @@ puts 'Equipments created!...'
   name = Faker::Name.name .split(" ")
   user_with_three_equipements.first_name = name[0]
   user_with_three_equipements.last_name = name[1]
-  user_with_three_equipements.address = Faker::Address.full_address
+  user_with_three_equipements.address = Faker::Address.city
   user_with_three_equipements.phone_number = Faker::PhoneNumber.phone_number
   user_with_three_equipements.owner = false
   user_with_three_equipements.remote_avatar_url = "https://picsum.photos/id/635/200/300"
