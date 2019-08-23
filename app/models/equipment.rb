@@ -20,6 +20,9 @@ class Equipment < ApplicationRecord
   include PgSearch::Model
   pg_search_scope :search,
                   against: %i[brand rating size style model price],
+                  associated_against: {
+                    reservations: :start_date
+                  },
                   using: {
                     tsearch: { prefix: true }
                   }
