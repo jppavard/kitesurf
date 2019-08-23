@@ -21,11 +21,13 @@
     @equipment = Equipment.find(params[:equipment_id])
     @reservation = Reservation.new(reservation_params)
     @reservation.equipment = @equipment
+    @reservation.user = current_user
     authorize(@reservation)
     if @reservation.save
       redirect_to my_reservations_path, notice: 'your reservation has been successfully created.'
     else
-      render :new
+      raise
+      render equipment_path(@equipment)
     end
   end
 
