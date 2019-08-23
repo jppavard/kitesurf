@@ -24,7 +24,7 @@
     @reservation.user = current_user
     authorize(@reservation)
     if @reservation.save
-      redirect_to my_reservations_path, notice: 'your reservation has been successfully created.'
+      redirect_to equipment_merci_path(@equipement), notice: 'your reservation has been successfully created.'
     else
       render '/equipments/show'
     end

@@ -24,6 +24,9 @@ class EquipmentsController < ApplicationController
     authorize(@equipment)
   end
 
+  def thankyou
+
+  end
   def create
     @equipment = Equipment.new(equipment_params)
     @equipment.owner = current_user
