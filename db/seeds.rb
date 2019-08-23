@@ -22,8 +22,8 @@ end
 puts 'Creating Equipment seeds...'
 
 array = User.all
-title = ["Super Kite pour débutant", "Kite au Grau du Roi pour expert","Kite freestyle pour expert","Petit Kite Junior pour profil intermédiaire à Grenoble","Epic Kites à récupérer à La Rochelle"]
-brand = ["Blade", "Takoon", "North", "Duotone", "F-One", "AirRush"]
+title = ["Kite freestyle pour expert","Epic Kites à récupérer le plus vite possible à La Rochelle sans delai"]
+brand = ["Blade", "Takoon hyper puissant trop debile"]
 style =["wave", "freeride", "freestyle", "foil"]
 model =["dice", "rebel", "infinity", "tigerush"]
 description = ["Une board tendre, parfait pour les débutants. Une aile pas trop nerveuse.","Une board junior pour les jeunes qui ont déjà un petit niveau. En très bon état."]
@@ -62,6 +62,9 @@ puts 'Equipments created!...'
   equipment1 = Equipment.create!(rating: 0, owner: user_with_three_equipements, title: "Super Kite pour débutant", brand: "Blade", size: 10, style: 'wave', model: "Infinity", location: "Lacanau", price: 59, description: "Une board tendre, parfait pour les débutants. Une aile pas trop nerveuse." )
   equipment2 = Equipment.create!(rating: 0, owner: user_with_three_equipements, title: "Kite au Grau du Roi pour expert", brand: "Tacoon", size: 12, style: "freeride", model: "B52", location: "Grau du Roi", price: 80, description: "J'ai la board et l'aile depuis 5 ans. J'en prend soin et j'ai un très bon niveau. A récupérer au Grau du Roi." )
   equipment3 = Equipment.create!(rating: 0, owner: user_with_three_equipements, title: "Grand Kite pour solide gaillard!", brand: "Genetrix", size: 9, style: "foil", model: "Gorgeous", location: "Genève", price: 52, description: "Pour les personnes de plus de 100kg qui ont un bon petit niveau." )
+  equipment1.remote_photo_url = "https://res.cloudinary.com/dcjawxszi/image/upload/v1566319982/kitesurf_zet4x5.jpg"
+  equipment2.remote_photo_url = "https://res.cloudinary.com/dcjawxszi/image/upload/v1566319982/kitesurf_zet4x5.jpg"
+  equipment3.remote_photo_url = "https://res.cloudinary.com/dcjawxszi/image/upload/v1566319982/kitesurf_zet4x5.jpg"
 
 
   Reservation.create!({

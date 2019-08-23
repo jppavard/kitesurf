@@ -34,7 +34,7 @@ class EquipmentsController < ApplicationController
     if @equipment.save
       redirect_to @equipment, notice: 'your kitesurf has been successfully created.'
     else
-      render :new
+      render '/my_equipments'
     end
   end
 
@@ -51,6 +51,7 @@ class EquipmentsController < ApplicationController
 
   def my_index
     @equipments = current_user.owned_equipments
+    @newequipment = Equipment.new
     authorize(@equipments)
   end
 
