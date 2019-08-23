@@ -22,8 +22,8 @@ end
 puts 'Creating Equipment seeds...'
 
 array = User.all
-title = ["Super Kite pour débutant", "Kite au Grau du Roi pour expert","Kite freestyle pour expert","Petit Kite Junior pour profil intermédiaire à Grenoble","Epic Kites à récupérer à La Rochelle"]
-brand = ["Blade", "Takoon", "North", "Duotone", "F-One", "AirRush"]
+title = ["Kite freestyle pour expert","Epic Kites à récupérer le plus vite possible à La Rochelle sans delai"]
+brand = ["Blade", "Takoon hyper puissant trop debile"]
 style =["wave", "freeride", "freestyle", "foil"]
 model =["dice", "rebel", "infinity", "tigerush"]
 description = ["Une board tendre, parfait pour les débutants. Une aile pas trop nerveuse.","Une board junior pour les jeunes qui ont déjà un petit niveau. En très bon état."]
