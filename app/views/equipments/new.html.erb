@@ -1,6 +1,7 @@
-<h2>New</h2>
 <div class="bg-white">
   <div class="container p-3 d- flex align-items-center">
+    <div class="new-equipment-header px-5">
+    <h2>Add new equipment</h2>
     <div class="row">
       <div class="col-8">
       <%= simple_form_for(@equipment, url: equipments_path()) do |f| %>
@@ -19,11 +20,16 @@
           <%= f.input :active%>
 
         <div class="form-actions">
-          <%= f.button :submit, "Let's go !!" %>
+          <%= f.button :submit, "Let's go !!", class: 'btn btn-primary btn-l w-100' %>
         </div>
         </div>
 
       <% end %>
     </div>
   </div>
+  </div>
 </div>
+
+
+
+
