@@ -26,8 +26,7 @@
     if @reservation.save
       redirect_to my_reservations_path, notice: 'your reservation has been successfully created.'
     else
-      raise
-      render equipment_path(@equipment)
+      render '/equipments/show'
     end
   end
 

@@ -3,8 +3,6 @@ class EquipmentsController < ApplicationController
   before_action :set_equipment, only: %i[show edit destroy]
 
   def index
-    p params[:style]
-    p 'toto'
     if params[:style]
       @equipments = policy_scope(Equipment.all).geocoded #returns equipments with coordinates
     else
@@ -34,7 +32,7 @@ class EquipmentsController < ApplicationController
     if @equipment.save
       redirect_to @equipment, notice: 'your kitesurf has been successfully created.'
     else
-      render '/my_equipments'
+      render :new
     end
   end
 
