@@ -13,17 +13,15 @@
           <div class="col-12 col-md-12 col-lg-8">
 
             <% @equipments.each do |equipment| %>
-              <div class="kitesurf-product">
-              <%= link_to equipment_path(equipment) do %>
-                <%= cl_image_tag(equipment.photo, crop: :fill) %>
-                <div class="kitesurf-product-infos">
-                  <h2><%= equipment.title %></h2>
-                  <p><strong>Brand </strong><%= equipment.brand.upcase %></p>
-                  <p><strong>Model </strong><%= equipment.model.upcase %></p>
-                  <p><strong>Size </strong><%= equipment.size %> m²</p>
-              <%end%>
-                </div>
+            <div class="kitesurf-product">
+              <%= cl_image_tag(equipment.photo, crop: :fill) %>
+              <div class="kitesurf-product-infos">
+                <h2><%= equipment.title %></h2>
+                <p><strong>Brand </strong><%= equipment.brand.upcase %></p>
+                <p><strong>Model </strong><%= equipment.model.upcase %></p>
+                <p><strong>Size </strong><%= equipment.size %> m²</p>
               </div>
+            </div>
             <%end%>
           </div>
 
