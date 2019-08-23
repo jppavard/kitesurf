@@ -8,6 +8,7 @@
     "bootstrap-slider": "^10.6.2",
     "jquery": "^3.4.1",
     "mapbox-gl": "^1.2.1",
+    "nouislider": "^14.0.2",
     "places.js": "^1.16.4",
     "popper.js": "^1.15.0"
   },
