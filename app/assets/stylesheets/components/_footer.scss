@@ -1,11 +1,12 @@
 .footer {
-  position: fixed;
+  // position: fixed;
   left: 0;
   bottom: 0;
   width: 100%;
   background-color: #004D7F;
   color: white;
   text-align: center;
+  padding: 10px 0px;
 }
 
 .footer a {
@@ -14,5 +15,5 @@
 }
 
 .footer_push {
-  height: 80px;
+  height: 100px;
 }
