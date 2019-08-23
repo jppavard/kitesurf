@@ -1,18 +1,8 @@
-body.equipments.show {
+body.equipments.my_index {
   .sticky-top {
     position: sticky;
-    top: 170px;
-    z-index:2;
-  }
-
-  .banner-show {
-    background-color: #004D7F;
-    position: sticky;
-    top: 70px;
-    z-index:2;
-    height: 100px;
-    text-align: center;
-    padding-top: 30px;
+    top: 82px;
+    z-index:1020;
   }
 
   .kitesurf-product {
@@ -23,7 +13,7 @@ body.equipments.show {
     display: flex;
     align-items: center;
     padding-left: 5px;
-    margin-top: 10px;
+    margin-top: 20px;
   }
 
   .kitesurf-product img {
@@ -60,7 +50,6 @@ body.equipments.show {
 
 
   h1 {
-    color: white;
     font-size: 32px;
     font-weight: bolder;
   }
@@ -68,7 +57,7 @@ body.equipments.show {
 
   h2 {
     color: #004d7f;
-    font-size: 25px;
+    font-size: 18px;
     font-weight: bolder;
     text-decoration: underline;
   }
@@ -88,6 +77,7 @@ body.equipments.show {
    color: black;
   }
 
+
   .kitesurf {
     background-color: white;
     box-shadow: 0px 1px 4px 1px 0.2;
@@ -97,5 +87,9 @@ body.equipments.show {
   .photo {
     padding: 5px;
     border-radius: 4px;
+  }
+
+  .bg-dark {
+    background-color: #004d7f;
   }
 }
