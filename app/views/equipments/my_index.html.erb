@@ -26,7 +26,7 @@
           </div>
 
   <div class="col-12 col-md-12 col-lg-4">
-    <div class="bg-white border p-3 sticky-top">
+    <div class="bg-white border p-3">
     <!-- form -->
     <%= simple_form_for(@newequipment, url: equipments_path()) do |f| %>
     <%= f.error_notification %>
@@ -34,13 +34,31 @@
       <div class="form-inputs">
         <%= f.input :title%>
         <%= f.input :description%>
-        <%= f.input :brand %>
-        <%= f.input :model, autofocus: true%>
-        <%= f.input :style, collection: Equipment::CATEGORIES, selected: :first%>
-        <%= f.input :size %>
+        <div class="row">
+          <div class="col-6">
+            <%= f.input :brand %>
+          </div>
+          <div class="col-6">
+            <%= f.input :model, autofocus: true%>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-6">
+            <%= f.input :style, collection: Equipment::CATEGORIES, selected: :first%>
+          </div>
+          <div class="col-6">
+            <%= f.input :size %>
+          </div>
+        </div>
         <%= f.input :location%>
-        <%= f.input :price %>
-        <%= f.input :photo%>
+        <div class="row">
+          <div class="col-6">
+            <%= f.input :photo%>
+          </div>
+          <div class="col-6">
+            <%= f.input :price %>
+          </div>
+        </div>
         <%= f.input :active%>
 
       <div class="form-actions btn btn-primary w-100">
