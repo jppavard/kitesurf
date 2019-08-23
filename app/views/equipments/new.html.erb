@@ -7,14 +7,13 @@
         <%= f.error_notification %>
 
         <div class="form-inputs">
-          <%= f.input :model, autofocus: true%>
-          <%= f.input :style, collection: Equipment::CATEGORIES, selected: :first%>
-
-          <%= f.input :location%>
-          <%= f.input :size %>
-          <%= f.input :brand %>
           <%= f.input :title%>
           <%= f.input :description%>
+          <%= f.input :brand %>
+          <%= f.input :model, autofocus: true%>
+          <%= f.input :style, collection: Equipment::CATEGORIES, selected: :first%>
+          <%= f.input :size %>
+          <%= f.input :location%>
           <%= f.input :price %>
           <%= f.input :photo%>
           <%= f.input :active%>
