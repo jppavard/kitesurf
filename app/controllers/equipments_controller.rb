@@ -3,8 +3,6 @@ class EquipmentsController < ApplicationController
   before_action :set_equipment, only: %i[show edit destroy]
 
   def index
-    p params[:style]
-    p 'toto'
     if params[:style]
       @equipments = policy_scope(Equipment.all).geocoded #returns equipments with coordinates
     else

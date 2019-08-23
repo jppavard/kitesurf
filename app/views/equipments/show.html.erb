@@ -1,11 +1,7 @@
-
-
-
-
 <div class="bg-dark">
   <div class="container p-5">
-    <div class="row">
-      <div class="col-8">
+    <div class="row bg-dark" >
+      <div class="col-8 bg-dark" >
         <h1><%= @equipment.title.upcase%></h1>
 
       </div>
@@ -17,28 +13,16 @@
   <div class="row">
     <div class="col-8">
 
-
       <!-- turn this into an alert (warning) -->
 
-      <div class="description p-3">
+      <div class="description p-3 mt-5">
         <h2>DESCRIPTION</h2>
-          <div class="d-flex justify-content-between mt-3 col-4">
-
-          </div>
       </div>
-
-
-
-
-
-
 
       <!-- make a card -->
       <div class="kitesurf p-3">
-        <div class="avatar p-4" style="height: 50px; background-image: url('<%= cl_image_path @equipment.owner.avatar %>')">
+        <div class="avatar p-4" style="height: 40px; background-image: url('<%= cl_image_path @equipment.owner.avatar %>')">
         </div>
-
-
       <div class="kitesurf-information"></div>
         <p><%= @equipment.owner.first_name %> </p>
         <hr/>
@@ -53,10 +37,6 @@
         <h4><%= @equipment.style.upcase %></h4>
         <hr/>
 
-      </div>
-
-      <!-- make a card -->
-      <div class="kitesurf-description p-3 ">
         <p class=""><strong>Description</strong></p>
         <p><%= @equipment.description %></p>
         <p class=""><strong>Location</strong></p>
@@ -65,13 +45,7 @@
         <span><%= @equipment.price %> € per day</span>
       </div>
 
-      <div class="kitesurf-photo p-3 ">
-        <div class="avatar p-4" style="height: 50px; background-image: url('')">
-
-
-      </div>
-
-      </div>
+      <!-- make a card -->
     </div>
 
     <div class="col-4">
@@ -81,11 +55,6 @@
         <%= simple_form_for(@reservation, url: equipment_reservations_path(@equipment), class: 'btn btn-primary w-100') do |f| %>
           <%= f.error_notification %>
 
-
-        <div class="d-flex justify-content-between mt-3">
-          <label>Date of the booking</label>
-        </div>
-
           <div class="form-inputs">
             <%= f.input :start_date, autofocus: true, html5: true, label: "Date of the booking"%>
 
@@ -94,66 +63,15 @@
           </div>
         <% end %>
 
-
-                <!-- <a href="#" class="btn btn-primary w-100">I reserve this equipment!</a> -->
-
-        <div class=" valid-feedback d-flex justify-content-between mt-3 border-bottom">
-          <p>Looks good!</p>
-        </div>
-
         <div class="d-flex justify-content-between mt-3">
           <p><strong>Price</strong></p>
           <span><%= @equipment.price %> € per day</span>
         </div>
       <div class="photo">
-        <%= cl_image_tag(@equipment.photo, :width => 100, :height => 150, :crop => :fill) %>
+        <%= cl_image_tag(@equipment.photo, :width => 300, :height => 200, :crop => :fill) %>
 
         </div>
       </div>
-      <!-- /checkout -->
     </div>
   </div>
 </div>
-
-
-
-
-
-
-
-
-
-<!-- <div class = 'equipment_card_presentation'>
-  <h2><%= @equipment.title %></h2>
-  <p><%= @equipment.rating %></p>
-  <h3 class="brand">Brand: <%= @equipment.brand %></h3>
-  <h3 class="model">Model: <%= @equipment.model %></h3>
-  <h3 class="size">Size: <%= @equipment.size %>m2</h3>
-  <p><%= @equipment.description %></p>
-  <p><%= @equipment.photo %></p>
-  <p><%= @equipment.style %></p>
-  <p><%= @equipment.location %></p>
-</div>
-<p><% user_id = @equipment.user_id %> </p>
-
-<form>
-  <div class="form-group">
-    <h4><%= @equipment.price %> € per day</h4>
-    <label>Date of the booking</label>
-
-    <div class="d-flex flex-row justify-content-between align-items-center">
-    <input type="date">
-
-    <div class="invalid-feedback">Please provide a valid value.</div>
-
-    <div class="valid-feedback">Looks good!</div>
-  </div>
- <button type="submit" class="btn btn-primary"><%= link_to 'I reserve this equipment!', reservation_path , :onclick => "$('#form_id').submit()" %></button>
-</form>
-
- -->
-
-
-
-
-
