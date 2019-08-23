@@ -1,4 +1,5 @@
 body.equipments.my_index {
+
   .sticky-top {
     position: sticky;
     top: 82px;
@@ -63,6 +64,7 @@ body.equipments.my_index {
   }
 
   h3 {
+    color:red;
     font-size: 18px;
     font-weight: bolder;
   }
@@ -70,11 +72,6 @@ body.equipments.my_index {
   h4 {
     font-size: 16px;
     font-weight: lighter;
-  }
-
-
-  hr{
-   color: black;
   }
 
 
