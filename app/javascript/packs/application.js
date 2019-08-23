@@ -1,6 +1,7 @@
 import "bootstrap";
 import Slider from "bootstrap-slider";
 
+
 // var slider1 = new Slider('#ex1', {
 //   formatter: function(value) {
 //     return 'Current value: ' + value;
@@ -19,7 +20,8 @@ import '@mapbox/mapbox-gl-geocoder/dist/mapbox-gl-geocoder.css';
 
 import { initMapbox } from '../plugins/init_mapbox';
 import { initAutocomplete } from '../plugins/init_autocomplete';
+import { initSlider } from '../plugins/init_slider';
 
 initMapbox();
 initAutocomplete();
-
+initSlider();

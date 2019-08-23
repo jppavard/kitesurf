@@ -1,11 +1,16 @@
 <%= form_with(url: equipments_path, method: "get", local: true, html: { class: "search-bar-home" }) do %>
-  <%= text_field_tag :location, nil, placeholder: 'where do you want to fly?' , class: 'form-control' %>
-  <%= date_field(:reservation, :start_date, class: 'form-control') %>
+  <%= text_field_tag :location, nil, placeholder: 'where do you want to fly?' , class: 'form-control search-input' %>
+  <%= date_field(:reservation, :start_date, class: 'form-control search-input') %>
 
-  <%= select_tag(:style, options_for_select(Equipment::CATEGORIES),class: 'form-control') %>
-  <%= range_field :size, :min=>3, :max=>16, :class=>"slide", :id=>"slider1"%>
+  <%= select_tag(:style, options_for_select(Equipment::CATEGORIES),class: 'form-control search-input') %>
+  <div class="form-control search">
+    <%= range_field :equipment, :size, :min=>3, :max=>16, :class=>"slide", :id=>"slider1"%>
+    <h2 id="kitesize"></h2>
+  </div>
   <br>
-  <%= submit_tag("Search",class: 'btn btn-primary') %>
+  <div class="form-control search">
+    <%= submit_tag("Search",class: 'btn btn-primary') %>
+  </div>
 <% end %>
 
 

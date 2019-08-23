@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   resources :equipments do
     resources :reservations, only: %i[new create]
+    get :merci, to: 'pages#thankyou'
   end
   resources :reservations, only: %i[show destroy]
 
@@ -8,7 +9,7 @@ Rails.application.routes.draw do
   get :my_reservations, to: 'reservations#my_index'
   get :clients_reservations, to: 'reservations#clients_reservations'
 
-  get :merci, to: 'pages#thankyou'
+
   get :about, to: 'pages#about'
 
   devise_for :users
