@@ -15,7 +15,10 @@
 
       <!-- make a card -->
       <div class="kitesurf p-3">
-        <div class="avatar p-4" style="height: 40px; background-image: url('kitesurf.png')">
+        <div class="avatar p-4" style="height: 40px;
+        background-image: url('<%= cl_image_path @equipment.owner.avatar %>')">
+
+
         </div>
       <div class="kitesurf-information"></div>
         <p><%= @equipment.owner.first_name %> </p>
