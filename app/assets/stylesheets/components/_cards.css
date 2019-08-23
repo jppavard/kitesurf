@@ -15,6 +15,14 @@
   box-shadow: 0px 1px 2px 1px black;
 }
 
+.card a {
+  height: 100%;
+}
+
+.card a:hover {
+  text-decoration: none;
+}
+
 .card-style {
   background-size: cover;
   background-position: center;
@@ -34,7 +42,10 @@
 
 .card-product {
   overflow: hidden;
-  background: rgb(100,100,100);
+  background: rgb(240,240,240);
+  display: flex;
+  flex-direction: column;
+  height: 100%;
 }
 
 .card-product > img {
@@ -45,7 +56,17 @@
   border-color: #004D7F;
 }
 
-.card-product .card-product-infos p {
+.card-product-infos {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.title h2 {
+  color:black;
+}
+
+.card-product-infos p {
   font-size: 12px;
   opacity: .8;
   color: gray;

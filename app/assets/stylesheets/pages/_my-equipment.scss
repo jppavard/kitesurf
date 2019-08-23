@@ -1,4 +1,11 @@
-.skitesurf-product {
+.sticky-top {
+  position: sticky;
+  top: 82px;
+  z-index:1020;
+
+
+}
+.kitesurf-product {
   overflow: hidden;
   height: 120px;
   background: white;
@@ -9,19 +16,19 @@
   margin-top: 20px;
 }
 
-.skitesurf-product img {
+.kitesurf-product img {
   height: 100%;
   width: 120px;
   object-fit: cover;
 }
 
-.skitesurf-product h2 {
+.kitesurf-product h2 {
   font-size: 16px;
   font-weight: bold;
   margin: 0;
 }
 
-.skitesurf-product p {
+.kitesurf-product p {
   font-size: 12px;
   line-height: 1.4;
   opacity: .7;
@@ -29,16 +36,63 @@
   margin-top: 8px;
 }
 
-.skitesurf-product div {
+.kitesurf-product div {
   padding: 0px 24px;
 }
 
-.skitesurf-product .card-product-infos {
+.kitesurf-product .card-product-infos {
   padding: 16px;
 }
 
 .form-actions button {
   color:white;
+}
+
+
+h1 {
+  color: white;
+  font-size: 32px;
+  font-weight: bolder;
+}
+
+
+h2 {
+  color: #004d7f;
+  font-size: 18px;
+  font-weight: bolder;
+  text-decoration: underline;
+}
+
+h3 {
+  font-size: 18px;
+  font-weight: bolder;
+}
+
+h4 {
+  font-size: 16px;
+  font-weight: lighter;
+}
+
+
+hr{
+ color: black;
+}
+
+a {
+  color: white;
+}
+.skitesurf {
+  background-color: white;
+  box-shadow: 0px 1px 4px 1px 0.2;
+
+}
+.photo {
+  display: flex;
+  justify-content: started;
+  align-items: center;
+  padding: 5px 80px;
+  width: 200;
+  height: 150;
 }
 
 body {

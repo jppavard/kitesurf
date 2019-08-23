@@ -34,12 +34,12 @@
 
 
       <!-- make a card -->
-      <div class="skitesurf p-3">
+      <div class="kitesurf p-3">
         <div class="avatar p-4" style="height: 50px; background-image: url('<%= cl_image_path @equipment.owner.avatar %>')">
         </div>
 
 
-      <div class="skitesurf-information"></div>
+      <div class="kitesurf-information"></div>
         <p><%= @equipment.owner.first_name %> </p>
         <hr/>
 
@@ -56,7 +56,7 @@
       </div>
 
       <!-- make a card -->
-      <div class="skitesurf-description p-3 ">
+      <div class="kitesurf-description p-3 ">
         <p class=""><strong>Description</strong></p>
         <p><%= @equipment.description %></p>
         <p class=""><strong>Location</strong></p>
@@ -65,58 +65,37 @@
         <span><%= @equipment.price %> € per day</span>
       </div>
 
-      <div class="skitesurf-photo p-3 ">
+      <div class="kitesurf-photo p-3 ">
         <div class="avatar p-4" style="height: 50px; background-image: url('')">
 
 
       </div>
 
       </div>
-      <!-- make a card -->
-      <!-- <div class="card p-3 mb-3">
-        <p class=""><strong>Regina</strong></p>
-        <p class=""><small>Tomato, basil, mozzarella</small></p>
-        <span class="">£5.95</span>
-      </div> -->
-
-      <!-- make a card -->
-      <!-- <div class="card p-3 mb-3">
-        <p class=""><strong>4 Formaggi</strong></p>
-        <p class=""><small>Tomato, basil, mozzarella</small></p>
-        <span class="">£5.95</span>
-      </div> -->
-
-      <!-- make a card -->
-      <!-- <div class="card p-3 mb-3">
-        <p class=""><strong>4 stagioni</strong></p>
-        <p class=""><small>Tomato, basil, mozzarella</small></p>
-        <span class="">£5.95</span>
-      </div> -->
-
-      <!-- /menu -->
-      <div class="information">
-
-
-      </div>
-
-
     </div>
 
     <div class="col-4">
-      <!-- checkout -->
+
       <div class="bg-white border p-3 sticky-top">
 
-        <%= link_to 'I reserve this equipment!', reservation_path , :onclick => "$('#form_id').submit()", class: 'btn btn-primary w-100' %>
+        <%= simple_form_for(@reservation, url: equipment_reservations_path(@equipment), class: 'btn btn-primary w-100') do |f| %>
+          <%= f.error_notification %>
 
-        <!-- <a href="#" class="btn btn-primary w-100">I reserve this equipment!</a> -->
 
         <div class="d-flex justify-content-between mt-3">
           <label>Date of the booking</label>
         </div>
 
-        <div class=" invalid-feedback d-flex justify-content-between mt-3">
-          <input type="date">
-        </div>
+          <div class="form-inputs">
+            <%= f.input :start_date, autofocus: true, html5: true, label: "Date of the booking"%>
+
+          <div class="form-actions">
+            <%= f.button :submit, "I reserve this equipment!", :class => 'btn btn-primary w-100' %>
+          </div>
+        <% end %>
+
+
+                <!-- <a href="#" class="btn btn-primary w-100">I reserve this equipment!</a> -->
 
         <div class=" valid-feedback d-flex justify-content-between mt-3 border-bottom">
           <p>Looks good!</p>
