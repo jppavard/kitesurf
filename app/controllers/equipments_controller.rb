@@ -3,7 +3,6 @@ class EquipmentsController < ApplicationController
   before_action :set_equipment, only: %i[show edit destroy]
 
   def index
-
     ap cookies[:start_date]
     cookies[:start_date] = params[:reservation][:start_date]
     ap cookies[:start_date]
@@ -13,6 +12,7 @@ class EquipmentsController < ApplicationController
     else
       @equipments = policy_scope(Equipment.all).geocoded
     end
+      @equipments = policy_scope(Equipment.all).geocoded
     @markers = @equipments.map do |equipment|
       {
         lat: equipment.latitude,

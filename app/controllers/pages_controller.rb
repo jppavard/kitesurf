@@ -10,6 +10,5 @@ class PagesController < ApplicationController
   end
 
   def thankyou
-
   end
 end
