@@ -1,12 +1,137 @@
-<div class = 'banner class="w-100 rounded"'><%= @equipment.photo %></div>
+
+
+
 
 <div class="bg-dark">
-  <div class="container p-3">
+  <div class="container p-5">
     <div class="row">
       <div class="col-8">
-        <h2><%= @equipment.title %></h2>
-        <p>Find me in app/views/equipment/show.html.erb</p>
+        <h1><%= @equipment.title.upcase%></h1>
+
       </div>
+    </div>
+  </div>
+</div>
+
+<div class="container py-3">
+  <div class="row">
+    <div class="col-8">
+
+
+      <!-- turn this into an alert (warning) -->
+
+      <div class="description p-3">
+        <h2>DESCRIPTION</h2>
+          <div class="d-flex justify-content-between mt-3 col-4">
+
+          </div>
+      </div>
+
+
+
+
+
+
+
+      <!-- make a card -->
+      <div class="skitesurf p-3">
+        <div class="avatar p-4" style="height: 50px; background-image: url('<%= cl_image_path @equipment.owner.avatar %>')">
+        </div>
+
+
+      <div class="skitesurf-information"></div>
+        <p><%= @equipment.owner.first_name %> </p>
+        <hr/>
+
+        <h3>Brand</h3>
+        <h4><%= @equipment.brand.upcase %></h4>
+        <h3>Model</h3>
+        <h4><%= @equipment.model.upcase %></h4>
+        <h3>Size</h3>
+        <h4><%= @equipment.size %>m²</h4>
+        <h3>Style</h3>
+        <h4><%= @equipment.style.upcase %></h4>
+        <hr/>
+
+      </div>
+
+      <!-- make a card -->
+      <div class="skitesurf-description p-3 ">
+        <p class=""><strong>Description</strong></p>
+        <p><%= @equipment.description %></p>
+        <p class=""><strong>Location</strong></p>
+        <p><%= @equipment.location %></p>
+        <h5 class=""><strong>Price</strong></h5>
+        <span><%= @equipment.price %> € per day</span>
+      </div>
+
+      <div class="skitesurf-photo p-3 ">
+        <div class="avatar p-4" style="height: 50px; background-image: url('')">
+
+
+      </div>
+
+      </div>
+      <!-- make a card -->
+      <!-- <div class="card p-3 mb-3">
+        <p class=""><strong>Regina</strong></p>
+        <p class=""><small>Tomato, basil, mozzarella</small></p>
+        <span class="">£5.95</span>
+      </div> -->
+
+      <!-- make a card -->
+      <!-- <div class="card p-3 mb-3">
+        <p class=""><strong>4 Formaggi</strong></p>
+        <p class=""><small>Tomato, basil, mozzarella</small></p>
+        <span class="">£5.95</span>
+      </div> -->
+
+      <!-- make a card -->
+      <!-- <div class="card p-3 mb-3">
+        <p class=""><strong>4 stagioni</strong></p>
+        <p class=""><small>Tomato, basil, mozzarella</small></p>
+        <span class="">£5.95</span>
+      </div> -->
+
+      <!-- /menu -->
+      <div class="information">
+
+
+      </div>
+
+
+    </div>
+
+    <div class="col-4">
+      <!-- checkout -->
+      <div class="bg-white border p-3 sticky-top">
+
+        <%= link_to 'I reserve this equipment!', reservation_path , :onclick => "$('#form_id').submit()", class: 'btn btn-primary w-100' %>
+
+        <!-- <a href="#" class="btn btn-primary w-100">I reserve this equipment!</a> -->
+
+        <div class="d-flex justify-content-between mt-3">
+          <label>Date of the booking</label>
+        </div>
+
+        <div class=" invalid-feedback d-flex justify-content-between mt-3">
+          <input type="date">
+        </div>
+
+        <div class=" valid-feedback d-flex justify-content-between mt-3 border-bottom">
+          <p>Looks good!</p>
+        </div>
+
+        <div class="d-flex justify-content-between mt-3">
+          <p><strong>Price</strong></p>
+          <span><%= @equipment.price %> € per day</span>
+        </div>
+      <div class="photo">
+        <%= cl_image_tag(@equipment.photo, :width => 100, :height => 150, :crop => :fill) %>
+
+        </div>
+      </div>
+      <!-- /checkout -->
     </div>
   </div>
 </div>
@@ -14,10 +139,12 @@
 
 
 
-<div class = 'banner'><%= @equipment.photo %></div>
 
 
-<div class = 'equipment_card_presentation'>
+
+
+
+<!-- <div class = 'equipment_card_presentation'>
   <h2><%= @equipment.title %></h2>
   <p><%= @equipment.rating %></p>
   <h3 class="brand">Brand: <%= @equipment.brand %></h3>
@@ -35,13 +162,18 @@
   <div class="form-group">
     <h4><%= @equipment.price %> € per day</h4>
     <label>Date of the booking</label>
+
     <div class="d-flex flex-row justify-content-between align-items-center">
     <input type="date">
+
     <div class="invalid-feedback">Please provide a valid value.</div>
+
     <div class="valid-feedback">Looks good!</div>
   </div>
  <button type="submit" class="btn btn-primary"><%= link_to 'I reserve this equipment!', reservation_path , :onclick => "$('#form_id').submit()" %></button>
 </form>
+
+ -->
 
 
 
