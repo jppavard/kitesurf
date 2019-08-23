@@ -106,17 +106,18 @@
       <!-- checkout -->
       <div class="bg-white border p-3 sticky-top">
 
-        <%= link_to 'I reserve this equipment!', reservation_path , :onclick => "$('#form_id').submit()", class: 'btn btn-primary w-100' %>
+        <%= simple_form_for(@reservation, url: equipment_reservations_path(@equipment), class: 'btn btn-primary w-100') do |f| %>
+          <%= f.error_notification %>
 
-        <!-- <a href="#" class="btn btn-primary w-100">I reserve this equipment!</a> -->
+          <div class="form-inputs">
+            <%= f.input :start_date, autofocus: true, html5: true, label: "Date of the booking"%>
 
-        <div class="d-flex justify-content-between mt-3">
-          <label>Date of the booking</label>
-        </div>
+          <div class="form-actions">
+            <%= f.button :submit, "I reserve this equipment!", :class => 'btn btn-primary w-100' %>
+          </div>
+        <% end %>
 
-        <div class=" invalid-feedback d-flex justify-content-between mt-3">
-          <input type="date">
-        </div>
+                <!-- <a href="#" class="btn btn-primary w-100">I reserve this equipment!</a> -->
 
         <div class=" valid-feedback d-flex justify-content-between mt-3 border-bottom">
           <p>Looks good!</p>
