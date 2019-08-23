@@ -3,6 +3,10 @@ class EquipmentsController < ApplicationController
   before_action :set_equipment, only: %i[show edit destroy]
 
   def index
+    ap "je usi sla"
+    ap cookies[:start_date]
+    cookies[:start_date] = params[:reservation][:start_date]
+    ap cookies[:start_date]
     if params[:style]
       @equipments = policy_scope(Equipment.all).geocoded #returns equipments with coordinates
     else
@@ -54,7 +58,11 @@ class EquipmentsController < ApplicationController
   end
 
   def show
-    @reservation = Reservation.new
+    if cookies[:start_date]
+      @reservation = Reservation.new(start_date: cookies[:start_date])
+    else
+      @reservation = Reservation.new(start_date: Date.today)
+    end
   end
 
   def destroy
