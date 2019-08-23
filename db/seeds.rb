@@ -48,7 +48,7 @@ guillaume.address = 'Grenoble'
 guillaume.phone_number = Faker::PhoneNumber.phone_number
 guillaume.owner = false
 guillaume.remote_avatar_url = "https://picsum.photos/id/635/200/300"
-guillaume.email = 'guillaumecromer@gmail.com'
+guillaume.email = 'guigui@gmail.com'
 guillaume.password = "000000"
 guillaume.save
 
