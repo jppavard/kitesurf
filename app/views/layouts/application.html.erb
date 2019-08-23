@@ -12,19 +12,19 @@
 
   </head>
   <body class="<%= controller_name %> <%= action_name %>">
-<%= render 'shared/navbar'%>
-<div class='navbar_push'>
-</div>
+    <%= render 'shared/navbar'%>
+    <div class='navbar_push'>
+    </div>
 
 
 
 
 
-    <%= yield %>
-<div class="footer_push"></div>
-<%= render 'shared/footer'%>
+        <%= yield %>
+    <div class="footer_push"></div>
+    <%= render 'shared/footer'%>
+
     <%= javascript_include_tag 'application' %>
     <%= javascript_pack_tag 'application' %>
-
   </body>
 </html>

@@ -1,8 +1,10 @@
 body.equipments.my_index {
+
   .sticky-top {
     position: sticky;
-    top: 82px;
-    z-index:1020;
+    top: 60px;
+    z-index:0;
+    margin:10px;
   }
 
   .kitesurf-product {
@@ -72,12 +74,14 @@ body.equipments.my_index {
     font-weight: lighter;
   }
 
-
-  hr{
-   color: black;
-  }
-
-
+.sticky-top {
+  position: sticky;
+  top: 60px;
+}
+.sticky-top {
+  position: sticky;
+  top: 100px;
+}
   .kitesurf {
     background-color: white;
     box-shadow: 0px 1px 4px 1px 0.2;

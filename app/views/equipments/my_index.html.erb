@@ -1,4 +1,4 @@
-<div class="bg-white">
+<div class="bg-white sticky-top">
     <div class="container p-3">
       <div class="row">
         <div class="col-8">
@@ -10,15 +10,11 @@
 
   <div class="container py-3">
         <div class="row">
-          <div class="col-8">
-
-            <!-- <div class="alert alert-warning" role="alert">
-              Do you want to add your equipment?
-            </div> -->
+          <div class="col-12 col-md-12 col-lg-8">
 
             <% @equipments.each do |equipment| %>
             <div class="kitesurf-product">
-              <img src="https://image.redbull.com/rbcom/010/2016-08-30/P-20160831-00051/0010/1/1950/1300/1/ruben-lenten-kitesurf.jpg" />
+              <%= cl_image_tag(equipment.photo, crop: :fill) %>
               <div class="kitesurf-product-infos">
                 <h2><%= equipment.title %></h2>
                 <p><strong>Brand </strong><%= equipment.brand.upcase %></p>
@@ -29,24 +25,23 @@
             <%end%>
           </div>
 
-  <div class="col-4">
+  <div class="col-12 col-md-12 col-lg-4">
     <div class="bg-white border p-3 sticky-top">
     <!-- form -->
     <%= simple_form_for(@newequipment, url: equipments_path()) do |f| %>
     <%= f.error_notification %>
 
       <div class="form-inputs">
-      <%= f.input :model, autofocus: true%>
-      <%= f.input :style, collection: Equipment::CATEGORIES, selected: :first%>
-
-      <%= f.input :location%>
-      <%= f.input :size %>
-      <%= f.input :brand %>
-      <%= f.input :title%>
-      <%= f.input :description%>
-      <%= f.input :price %>
-      <%= f.input :photo%>
-      <%= f.input :active%>
+        <%= f.input :title%>
+        <%= f.input :description%>
+        <%= f.input :brand %>
+        <%= f.input :model, autofocus: true%>
+        <%= f.input :style, collection: Equipment::CATEGORIES, selected: :first%>
+        <%= f.input :size %>
+        <%= f.input :location%>
+        <%= f.input :price %>
+        <%= f.input :photo%>
+        <%= f.input :active%>
 
       <div class="form-actions btn btn-primary w-100">
         <%= f.button :submit,"Let's go !!" %>
