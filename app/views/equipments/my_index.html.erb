@@ -32,7 +32,7 @@
   <div class="col-4">
     <div class="bg-white border p-3 sticky-top">
     <!-- form -->
-    <%= simple_form_for(:equipment, url: equipments_path()) do |f| %>
+    <%= simple_form_for(@newequipment, url: equipments_path()) do |f| %>
     <%= f.error_notification %>
 
       <div class="form-inputs">
@@ -60,32 +60,3 @@
   </div>
 
 </div>
-
-
-<h2>my equipments</h2>
-
-<div class="container">
-  <div class="row">
-    <div class="cards">
-    <% @equipments.each do |equipment| %>
-      <div class="card" style=" background-position: center;
-background-image: url('<%=cl_image_path equipment.photo %>')">
-        <p><%= equipment.title %></p>
-        <p>brand <br>
-          <%= equipment.brand %></p>
-        <p>model <br>
-          <%= equipment.model %></p>
-        <p>size <br>
-          <%= equipment.size %> m2</p>
-        <p>rating <br>
-          <%= equipment.rating %></p>
-        <div class="equipment" >
-        </div>
-      </div>
-    <% end %>
-    </div>
-  </div>
-</div>
-
-
-
