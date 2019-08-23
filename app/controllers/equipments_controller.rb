@@ -32,9 +32,9 @@ class EquipmentsController < ApplicationController
     @equipment.rating = 0
     authorize(@equipment)
     if @equipment.save
-      redirect_to @equipment, notice: 'your kitesurf has been successfully created.'
+      redirect_to my_equipments_path, notice: 'your kitesurf has been successfully created.'
     else
-      render '/my_equipments'
+      render :new
     end
   end
 
