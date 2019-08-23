@@ -8,4 +8,8 @@ class PagesController < ApplicationController
       @equipments = policy_scope(Equipment)
     end
   end
+
+  def thankyou
+
+  end
 end
