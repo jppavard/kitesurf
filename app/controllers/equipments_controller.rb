@@ -4,6 +4,10 @@ class EquipmentsController < ApplicationController
 
   def index
 
+    ap cookies[:start_date]
+    cookies[:start_date] = params[:reservation][:start_date]
+    ap cookies[:start_date]
+
     if params[:style]
       @equipments = policy_scope(Equipment.all).geocoded.search(params[:style]).near(params[:equipment_location], 50) #returns equipments with coordinates
     else
@@ -58,7 +62,11 @@ class EquipmentsController < ApplicationController
   end
 
   def show
-    @reservation = Reservation.new(start_date: Date.today)
+    if cookies[:start_date]
+      @reservation = Reservation.new(start_date: cookies[:start_date])
+    else
+      @reservation = Reservation.new(start_date: Date.today)
+    end
   end
 
   def destroy

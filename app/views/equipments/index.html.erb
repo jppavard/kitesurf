@@ -74,6 +74,7 @@
   </form>
 </div>
 <br>
+<div class=" hearder-index-equipment p-3">
 <h1>List of available equipments</h1>
 
 <div class="row">
@@ -82,7 +83,7 @@
       <% @equipments.each do |equipment| %>
       <%= link_to equipment_path(equipment) do %>
       <div class="card-equipment">
-          <%= cl_image_tag(equipment.photo, crop: :fill) %>
+          <%= cl_image_tag(equipment.photo, :width=>200, :height=>200, crop:"scale") %>
           <div class="card-equipment-infos">
               <div class="title">
               <h2><%= equipment.title %></h2>
@@ -114,5 +115,6 @@
         data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
       </div>
     </div>
+</div>
 </div>
 
