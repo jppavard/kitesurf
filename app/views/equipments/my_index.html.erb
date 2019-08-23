@@ -1,3 +1,67 @@
+<div class="bg-white">
+    <div class="container p-3">
+      <div class="row">
+        <div class="col-8">
+          <h3>My equipments</h3>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="container py-3">
+        <div class="row">
+          <div class="col-8">
+
+            <!-- <div class="alert alert-warning" role="alert">
+              Do you want to add your equipment?
+            </div> -->
+
+            <% @equipments.each do |equipment| %>
+            <div class="skitesurf-product">
+              <img src="https://image.redbull.com/rbcom/010/2016-08-30/P-20160831-00051/0010/1/1950/1300/1/ruben-lenten-kitesurf.jpg" />
+              <div class="skitesurf-product-infos">
+                <h2><%= equipment.title %></h2>
+                <p><strong>Brand </strong><%= equipment.brand.upcase %></p>
+                <p><strong>Model </strong><%= equipment.model.upcase %></p>
+                <p><strong>Size </strong><%= equipment.size %> m²</p>
+              </div>
+            </div>
+            <%end%>
+          </div>
+
+  <div class="col-4">
+    <div class="bg-white border p-3 sticky-top">
+    <!-- form -->
+    <%= simple_form_for(:equipment, url: equipments_path()) do |f| %>
+    <%= f.error_notification %>
+
+      <div class="form-inputs">
+      <%= f.input :model, autofocus: true%>
+      <%= f.input :style, collection: Equipment::CATEGORIES, selected: :first%>
+
+      <%= f.input :location%>
+      <%= f.input :size %>
+      <%= f.input :brand %>
+      <%= f.input :title%>
+      <%= f.input :description%>
+      <%= f.input :price %>
+      <%= f.input :photo%>
+      <%= f.input :active%>
+
+      <div class="form-actions btn btn-primary w-100">
+        <%= f.button :submit,"Let's go !!" %>
+      </div>
+      </div>
+
+      <% end %>
+
+    </div>
+    <!-- /form -->
+  </div>
+
+</div>
+
+
 <h2>my equipments</h2>
 
 <div class="container">
@@ -22,4 +86,6 @@ background-image: url('<%=cl_image_path equipment.photo %>')">
     </div>
   </div>
 </div>
+
+
 
