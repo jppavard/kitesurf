@@ -4,7 +4,7 @@
 
   <%= select_tag(:style, options_for_select(Equipment::CATEGORIES),class: 'form-control search-input') %>
   <div class="form-control search">
-    <%= range_field :size, :min=>3, :max=>16, :class=>"slide", :id=>"slider1"%>
+    <%= range_field :equipment, :size, :min=>3, :max=>16, :class=>"slide", :id=>"slider1"%>
     <h2 id="kitesize"></h2>
   </div>
   <br>

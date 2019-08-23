@@ -12,7 +12,7 @@
   color: black;
   font-weight: bolder;
   display: flex;
-  box-shadow: 0px 1px 2px 1px black;
+  box-shadow: 0px 1px 1px 1px black;
 }
 
 .card a {

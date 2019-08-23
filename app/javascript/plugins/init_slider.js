@@ -1,10 +1,17 @@
 
 
 const initSlider = () => {
-element = document.querySelector('#kitesize')
-input = document.querySelector('#slider1')
-input.addEventListener('input', (element) => {
-  element.innerText = input.value
-})
+  const element = document.querySelector('#kitesize')
+  const input = document.querySelector('.search input[type="range"]')
+
+  console.log("je suis la")
+  console.log(element)
+  console.log(input)
+  if (input != null) {
+    input.addEventListener('input', (event) => {
+      element.innerText = input.value
+    })
+  }
+}
 
 export { initSlider };
