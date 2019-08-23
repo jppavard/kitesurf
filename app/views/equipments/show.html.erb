@@ -29,8 +29,7 @@
   <p><%= @equipment.location %></p>
 </div>
 <p><% user_id = @equipment.user_id %> </p>
-<div class="avatar" style="height: 50px; background-image: url('<%=cl_image_path User.find(user_id).avatar %>')">
-</div>
+
 <form>
   <div class="form-group">
     <h4><%= @equipment.price %> € per day</h4>
