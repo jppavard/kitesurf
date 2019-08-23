@@ -18,7 +18,7 @@
         <label for="validationDefault03">Style</label>
         <select class="custom-select">
           <option selected>Style ?</option>
-          <option value="wave">Wave</option>
+          <option value="wave" selected="">Wave</option>
           <option value="freestyle">Freestyle</option>
           <option value="freeride">Freeride</option>
           <option value="foil">Foil</option>
@@ -65,7 +65,7 @@
       </div>
        <div class="col-md-2 mb-1">
           <div><label for="validationDefault03">Date</label></div>
-          <input type="date">
+          <input type="date" value="<%= params[:reservation][:start_date] %>">
       </div>
       <div class="col-md-1 mb-1">
         <button class="btn btn-primary" type="submit" align-items-center='center'>Search Kitesurf</button>
